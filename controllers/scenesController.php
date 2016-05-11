@@ -80,7 +80,8 @@ class scenesController extends \Bang\SuperController implements \Bang\Controller
 
     	// Add module language files to language array
     	$this->View->Lang->addLanguageFile($this->path.'/lang/'.$currentLang);
-    	//$this->View->addStyle($this->View->TemplatePath.'min/css/content/assets/scss/content.min.css', 0);
+    	$this->View->addStyle($this->View->TemplatePath.'min/css/content.min.css', 0);
+    	$this->View->addScript($this->View->TemplatePath.'min/js/content.js', 0);
 
     	// All of the methods in this class are login protected
     	$this->testPermisions();
