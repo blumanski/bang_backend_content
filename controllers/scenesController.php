@@ -15,6 +15,7 @@
 Namespace Bang\Modules\Content;
 
 Use Bang\Modules\Content\Models\Db,
+	Bang\Modules\Content\Models\Scenes,
 	Bang\Modules\Content\Models\Mail,
     Bang\Helper;
 
@@ -77,6 +78,8 @@ class scenesController extends \Bang\SuperController implements \Bang\Controller
     	$currentLang = $this->View->Lang->LangLoaded;
     	
     	$this->Overwrite = $this->getBackTplOverwrite();
+    	
+    	//$this->Books = new \Bang\Tools\Books();
 
     	// Add module language files to language array
     	$this->View->Lang->addLanguageFile($this->path.'/lang/'.$currentLang);
@@ -86,8 +89,9 @@ class scenesController extends \Bang\SuperController implements \Bang\Controller
     	// All of the methods in this class are login protected
     	$this->testPermisions();
     	
-    	$this->Data	= new Db($di);
-    	$this->Mail	= new Mail($di);
+    	$this->Data		= new Db($di);
+    	$this->Scenes 	= new Scenes($di);
+    	$this->Mail	 	= new Mail($di);
     	$this->Data->setMailInstance($this->Mail);
     }
     
@@ -97,7 +101,10 @@ class scenesController extends \Bang\SuperController implements \Bang\Controller
     public function indexAction() {
     	
     	$template = '';
-    	 
+    	
+    	//$result = $this->Books->searchIsbnDbAusthor('a');
+    	//$result = $this->Books->searchGoogleBooks('inauthor:Smith&maxResults=40&orderBy=relevance');
+    	
     	if(file_exists($this->Overwrite.'dashboard'.DIRECTORY_SEPARATOR.'templates'.DIRECTORY_SEPARATOR.'scenes.php')) {
     		$template = $this->View->loadTemplate($this->Overwrite.'dashboard'.DIRECTORY_SEPARATOR.'templates'.DIRECTORY_SEPARATOR.'scenes.php');
     	} else {

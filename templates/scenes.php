@@ -32,7 +32,26 @@
 			      
 			      <div class="col s12 m4">
 			      
-			      	List of content will be here....
+			      	<form action="/content/scene/addscene/" method="post" id="addsceneform">
+
+			      	
+			      		<div class="row margin">
+							<div class="input-field col s12">
+					            <input 
+					            	autocomplete="off"
+					            	placeholder="<?php echo $this->Lang->write('content_scene_label_author');?>" 
+					            	type="text" id="author" 
+					            	name="author" 
+					            	value="<?php if(isset($post['author'])) { echo htmlspecialchars($post['author'], ENT_QUOTES, 'UTF-8'); }?>" 
+					            />
+					            <label for="author" class="center-align"><?php echo $this->Lang->write('content_scene_label_author');?></label>
+					            <div class="valerror"></div>
+							</div>
+						</div>
+
+
+			      	
+			      	</form>
 			      
 			      </div>
 			      

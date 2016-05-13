@@ -13,6 +13,7 @@ Namespace Bang\Modules\Content;
 
 Use Bang\Modules\Content\Models\Db,
 	Bang\Modules\Content\Models\Mail,
+	Bang\Modules\Content\Models\Scenes,
 	Bang\Tools\Awss3,
     Bang\Helper;
 
@@ -71,14 +72,14 @@ class ajaxController extends \Bang\SuperController
 
     	// Add module language files to language array
     	$this->View->Lang->addLanguageFile($this->path.'/lang/'.$currentLang);
-    	$this->View->addStyle($this->View->TemplatePath.'min/css/account/assets/scss/account.min.css', 0);
 
     	// every action function in this class needs a permission check
     	// in this case, I can add it to the constructor
     	$this->testPermisions();
     	
-    	$this->Data	= new Db($di);
-    	$this->Mail	= new Mail($di);
+    	$this->Data		= new Db($di);
+    	$this->Scenes 	= new Scenes($di);
+    	$this->Mail		= new Mail($di);
     	$this->Data->setMailInstance($this->Mail);
     	
     	// AWS instance
@@ -97,6 +98,29 @@ class ajaxController extends \Bang\SuperController
     		Helper::redirectTo('/account/index/login/');
     		exit;
     	}
+    }
+    
+    /**
+     * Get a list of authors from google books
+     * @return boolean
+     */
+    public function findAuthorAction()
+    {
+    	$post  = Helper::getRequestParams('post');
+    	$post  = Helper::prepareAjaxValues($post);
+    	
+    	if(is_array($post) && isset($post['search']) && !empty($post['search'])) {
+    		//$result = $this->Books->searchGoogleBooks('inauthor:Smith&maxResults=40&orderBy=relevance');
+    		
+    		$result = $this->Scenes->findAuthor($post['search']);
+    		
+    		if(is_array($result) && count($result)) {
+    			
+    			die(json_encode($result));
+    		}
+    	}
+    	
+    	die(json_encode(array('outcome' => 'failed', 'messages' => 'No data found.')));
     }
     
     /**
