@@ -109,10 +109,10 @@ class ajaxController extends \Bang\SuperController
     	$post  = Helper::getRequestParams('post');
     	$post  = Helper::prepareAjaxValues($post);
     	
-    	if(is_array($post) && isset($post['search']) && !empty($post['search'])) {
+    	if(is_array($post) && isset($post['phrase']) && !empty($post['phrase'])) {
     		//$result = $this->Books->searchGoogleBooks('inauthor:Smith&maxResults=40&orderBy=relevance');
     		
-    		$result = $this->Scenes->findAuthor($post['search']);
+    		$result = $this->Scenes->findAuthor($post['phrase']);
     		
     		if(is_array($result) && count($result)) {
     			

@@ -5,7 +5,7 @@
 		<div class="row">
 			<div class="col s12 m12 l12">
 				
-				<h5 class="breadcrumbs-title"><?php echo $this->Lang->write('dashboard_module_headline');?></h5>
+				<h5 class="breadcrumbs-title"><?php echo $this->Lang->write('content_scenes_index_headline');?></h5>
 				<ol class="breadcrumbs">
 					<li>
 						<a href="/">
@@ -24,6 +24,16 @@
 <!--start container-->
 <div class="container content-wrapper">
 	<div class="section">
+	
+		<nav>
+			<div class="nav-wrapper">
+				<ul id="nav-mobile" class="left hide-on-med-and-down">
+		        <li class="active"><a href="/content/scenes/index/"><?php echo $this->Lang->write('content_scene_show_list');?></a></li>
+		        <li><a href="/content/scenes/addscene/"><?php echo $this->Lang->write('content_scene_show_add');?></a></li>
+		        <li><a href="javascript:void(0);"><?php echo $this->Lang->write('content_scene_show_edit');?></a></li>
+		      </ul>
+			</div>
+		</nav>
 
 		<div class="action-wrapper">
 			<div class="table-datatables">

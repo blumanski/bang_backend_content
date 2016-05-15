@@ -5,7 +5,7 @@
 		<div class="row">
 			<div class="col s12 m12 l12">
 				
-				<h5 class="breadcrumbs-title"><?php echo $this->Lang->write('content_scenes_add_headline');?></h5>
+				<h5 class="breadcrumbs-title"><?php echo $this->Lang->write('content_scenes_edit_headline');?></h5>
 				<ol class="breadcrumbs">
 					<li>
 						<a href="/">
@@ -41,57 +41,6 @@
 			      <div class="row">
 			      
 			      <div class="col s12 m4">
-			      
-			      
-			      	<div>
-			      	<h4>Dont't worry yet, this is in work...</h4>
-			      	<ul>
-			      	<li>
-			      		<h4>Add author, autocomplete while user is writing</h4><br />
-			      		<i> If the author is not in our database, it will get entered newly and the book title will get assigned for future reference as well.<br />
-    					Next time someone is adding a book for the same author, the autocomplete will show something like "Author Name - [example book title]. to make sure double names are dealt with." The user can select the right author (if authors with the same name occur).<br /><br />
-			      		That process will probably get better over time.
-			      		</i><br /><br />
-			      	</li>
-			      	
-			      	<li>
-			      		<h4>Add Book Title, adding the book title will look up the title while writing.</h4><br />
-    The title is first looked up in our database and if not found in a remote database such as "http://isbndb.com/" or any other online service that suits the purpose.<br /><br />
-
-    The search is always looking for the actual language.<br />
-    Saying that, each scene can get edited in another language so that one can create a scene in multiple languages.
-			      	</li>
-					
-					<li>
-						<h4>Get book details.</h4><br />
-						<i>If no book details available, the details will get loaded from http://isbndb.com/ API.<br />
-    					The book details will get saved in our database so that we never need a remote service to display book listing on the front end, that would slow down too much.
-						</i><br /><br />
-					</li>
-					
-					<li>
-						<h4>Remote Data for Books</h4>
-						<p>
-						Well, the service http://isbndb.com/ has 500 requests per day for free. Anymore cost a few dollars.
-    On the http://isbndb.com API, 500 requests per day are free, we can work with that very well for now.<br /><br />
-    In case that we need more, the price for 3000 requests per day is 29 USD, that is a good price. isbndb.com is actually the recommended by amazon as book api.<br /><br />
-						
-						isbndb.com is actually the recommended by amazon as book api.<br />
-						<br />
-						<a href="http://isbndb.com/account/dev" target="_blank">http://isbndb.com/account/dev</a>
-						
-						<br /><br />
-						Let's talk theory, with the data, we can create a link to amazon and get money for each sale as an affiliate.<br />
-    					Well, there are surely other options as well.
-						
-						</p>
-					</li>
-								      	
-			      	</ul>
-			      	
-			      	
-			      	</p>
-			      	</div>
 			      
 			      	<form action="/content/scene/addscene/" method="post" id="addsceneform">
 
