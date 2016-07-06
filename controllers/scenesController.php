@@ -105,8 +105,8 @@ class scenesController extends \Bang\SuperController implements \Bang\Controller
     	//$result = $this->Books->searchIsbnDbAusthor('a');
     	//$result = $this->Books->searchGoogleBooks('inauthor:Smith&maxResults=40&orderBy=relevance');
     	
-    	if(file_exists($this->Overwrite.'dashboard'.DIRECTORY_SEPARATOR.'templates'.DIRECTORY_SEPARATOR.'index.php')) {
-    		$template = $this->View->loadTemplate($this->Overwrite.'dashboard'.DIRECTORY_SEPARATOR.'templates'.DIRECTORY_SEPARATOR.'index.php');
+    	if(file_exists($this->Overwrite.'content'.DIRECTORY_SEPARATOR.'templates'.DIRECTORY_SEPARATOR.'index.php')) {
+    		$template = $this->View->loadTemplate($this->Overwrite.'content'.DIRECTORY_SEPARATOR.'templates'.DIRECTORY_SEPARATOR.'index.php');
     	} else {
     		$template  = $this->View->loadTemplate($this->path.DIRECTORY_SEPARATOR.'templates'.DIRECTORY_SEPARATOR.'index.php');
     	}
@@ -126,8 +126,8 @@ class scenesController extends \Bang\SuperController implements \Bang\Controller
     	//$result = $this->Books->searchIsbnDbAusthor('a');
     	//$result = $this->Books->searchGoogleBooks('inauthor:Smith&maxResults=40&orderBy=relevance');
     	 
-    	if(file_exists($this->Overwrite.'dashboard'.DIRECTORY_SEPARATOR.'templates'.DIRECTORY_SEPARATOR.'scenes.php')) {
-    		$template = $this->View->loadTemplate($this->Overwrite.'dashboard'.DIRECTORY_SEPARATOR.'templates'.DIRECTORY_SEPARATOR.'scenes.php');
+    	if(file_exists($this->Overwrite.'content'.DIRECTORY_SEPARATOR.'templates'.DIRECTORY_SEPARATOR.'scenes.php')) {
+    		$template = $this->View->loadTemplate($this->Overwrite.'content'.DIRECTORY_SEPARATOR.'templates'.DIRECTORY_SEPARATOR.'scenes.php');
     	} else {
     		$template  = $this->View->loadTemplate($this->path.DIRECTORY_SEPARATOR.'templates'.DIRECTORY_SEPARATOR.'scenes.php');
     	}
